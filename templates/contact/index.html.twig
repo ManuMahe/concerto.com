@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Concerto.com - Nous contacter{% endblock %}
+
+{% block body %}
+
+<h2>Questions Fréquemment Posées :</h2>
+<div class="qfp">
+    <div class="row">
+        <h3>Une question particulièrement inventive ?</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente natus dolorem quidem quibusdam facere adipisci
+            repellat, sed, pariatur esse blanditiis voluptas tempora fugiat totam.</p>
+    </div>
+</div>
+<div class="qfp">
+    <div class="row">
+        <h3>Une question particulièrement inventive ?</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente natus dolorem quidem quibusdam facere adipisci
+            repellat, sed, pariatur esse blanditiis voluptas tempora fugiat totam.</p>
+    </div>
+</div>
+<div class="qfp">
+    <div class="row">
+        <h3>Une question particulièrement inventive ?</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente natus dolorem quidem quibusdam facere adipisci
+            repellat, sed, pariatur esse blanditiis voluptas tempora fugiat totam.</p>
+    </div>
+</div>
+
+
+
+
+<h2>Nous contacter :</h2>
+{{ include('contact/_form.html.twig') }}
+
+<h2>Où sommes nous ?</h2>
+<div class="localisation">
+    <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=4.896284043788911%2C52.36254028602908%2C4.899824559688569%2C52.36398655091068&amp;layer=mapnik&amp;marker=52.36326342438765%2C4.898054301738739" style="border: 1px solid black"></iframe>
+
+    <small><a href="https://www.openstreetmap.org/?mlat=52.36326&amp;mlon=4.89805#map=19/52.36326/4.89805" target="_blank">
+        <div class="adresse">
+            <div>Concerto</div>
+            <div>60 Utrechtsestraat</div>
+            <div>1017VP AMSTERDAM</div>
+        
+        </div>
+    </a></small>
+</div>
+
+
+
+{% endblock %}

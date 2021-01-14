@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Concerto.com - un concerto de bonnes affaires{% endblock %}</title>
+        <meta name = « description » content = " Le e-commerce est plus sympa quand on aime le piano et acheter des trucs. Venez visiter Concerto.com, et profiter d'un concerto de bonnes affaires.">
+
+        <!--Bootstrap-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">        
+
+        {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+
+        {% endblock %}
+        <!--jQuery-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!--dataTables-->
+        <link href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css">
+
+        
+        <!--Fonts-->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Petit+Formal+Script&display=swap" rel="stylesheet"> 
+
+        <!-- Social Media Icons -->
+        <script src="https://kit.fontawesome.com/052d327b85.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <!--header-->
+        <div class="row satisfait">
+            <div class="col-sm-4 start"><i class="fas fa-smile"></i> Satisfait ou remboursé</div>
+            <div class="col-sm-4"><i class="fas fa-truck"></i> Livraison sous 72h</div>
+            <div class="col-sm-4 end"><i class="fas fa-hands-helping"></i> Service client efficace et pas cher</div>
+        </div>
+        <div class="row titreHeader">
+            <div class="col-sm-12"><div class="concertocom"><img class="iconePiano" src="{{ asset('/images/iconePiano.png') }}" alt="icone piano"><h1>concerto.com <span>un concerto de bonnes affaires !!!</span></h1></div></div>
+        </div>
+        <!---->
+        <div id="nav" class="navBarre ordi">
+            <div id="note1" class="touche aBlanc">
+                <a href="{{ path('home') }}">Accueil</a>
+
+            </div>
+            <div id="note2" class="touche aNoir">
+                <a href=""></a>
+                <a href="{{ path('contact_index') }}">Nous Contacter</a>
+
+            </div>
+            <div id="note3" class="touche aBlanc">
+                <a href=""></a>
+
+            </div>
+            <div id="note4" class="touche aNoir">
+                <a href=""></a>
+
+            </div>
+            <div id="note5" class="touche aBlanc">
+                <a href=""></a>
+
+            </div>
+            <div id="note6" class="touche aNoir">
+                <a href=""></a>                
+
+            </div>
+            <div id="note7" class="touche aBlanc">
+                {% if app.user %}
+                <a href="{{ path('app_logout') }}">Se Déconnecter</a>
+                {% else %}
+                <a href="{{ path('app_login') }}">Se Connecter</a>
+                {% endif %}
+
+            </div>
+            <div id="note8" class="touche aNoir">
+                {% if app.user %}
+                <a href="{{ path('produit_index') }}">Administration</a>
+                {% else %}
+                <a href="{{ path('app_register') }}">S'enregistrer</a>
+                {% endif %}
+
+            </div>
+
+        </div>
+
+        <div id="nav" class="navBarre mobile">
+            <div id="note1" class="touche aBlanc">
+                <a href="{{ path('home') }}"><i class="fas fa-home"></i></a>
+
+            </div>
+            <div id="note2" class="touche aNoir">
+                <a href=""></a>
+                <a href="{{ path('contact_index') }}"><i class="fas fa-envelope-open-text"></i></a>
+
+            </div>
+            <div id="note3" class="touche aBlanc">
+                <a href=""></a>
+
+            </div>
+            <div id="note4" class="touche aNoir">
+                <a href=""></a>
+
+            </div>
+            <div id="note5" class="touche aBlanc">
+                <a href=""></a>
+
+            </div>
+            <div id="note6" class="touche aNoir">
+                <a href=""></a>                
+
+            </div>
+            <div id="note7" class="touche aBlanc">
+                {% if app.user %}
+                <a href="{{ path('app_logout') }}"><i class="fas fa-sign-out-alt"></i></a>
+                {% else %}
+                <a href="{{ path('app_login') }}"><i class="fas fa-sign-in-alt"></i></a>
+                {% endif %}
+
+            </div>
+            <div id="note8" class="touche aNoir">
+                {% if app.user %}
+                <a href="{{ path('produit_index') }}"><i class="fas fa-cogs"></i></a>
+                {% else %}
+                <a href="{{ path('app_register') }}"><i class="fas fa-user-plus"></i></a>
+                {% endif %}
+
+            </div>
+
+        </div>
+
+        <div class="container">
+            {% block body %}{% endblock %}
+        </div>
+
+        <div class="audio">
+            <audio id="audio1" controls preload="auto">
+                <source src="{{ asset('/audio/do.mp3') }}" controls></source>
+                Your browser isn't invited for super fun audio time.
+            </audio>
+            <audio id="audio2" controls preload="auto" src="{{ asset('/audio/re.mp3') }}">
+                    
+                Your browser isn't invited for super fun audio time.
+            </audio>
+            <audio id="audio3" controls preload="auto">
+                <source src="{{ asset('/audio/mi.mp3') }}" controls></source>
+                Your browser isn't invited for super fun audio time.
+            </audio>
+            <audio id="audio4" controls preload="auto">
+                <source src="{{ asset('/audio/fa.mp3') }}" controls></source>
+                Your browser isn't invited for super fun audio time.
+            </audio>
+            <audio id="audio5" controls preload="auto">
+                <source src="{{ asset('/audio/sol.mp3') }}" controls></source>
+                Your browser isn't invited for super fun audio time.
+            </audio>
+            <audio id="audio6" controls preload="auto">
+                <source src="{{ asset('/audio/la.mp3') }}" controls></source>
+                Your browser isn't invited for super fun audio time.
+            </audio>
+            <audio id="audio7" controls preload="auto">
+                <source src="{{ asset('/audio/si.mp3') }}" controls></source>
+                Your browser isn't invited for super fun audio time.
+            </audio>
+            <audio id="audio8" controls preload="auto">
+                <source src="{{ asset('/audio/do.mp3') }}" controls></source>
+                Your browser isn't invited for super fun audio time.
+            </audio>
+
+        </div>
+
+        <footer>
+            <div class="row footer">
+                <div class="col-lg-4">
+                    <p class="start">Copyright &#169; concerto.com - Site réalisé par Emmanuel Mahé</p>
+                </div>
+                <div class="col-lg-4">
+                    <div class="sociaux">
+                        <a href=""><img src="{{ asset('/images/fb.png') }}" alt="icone facebook"></a>
+                        <a href=""><img src="{{ asset('/images/twitter.png') }}" alt="icone twitter"></a>
+                        <a href=""><img src="{{ asset('/images/tumblr.png') }}" alt="icone tumblr"></a>
+                        <a href=""><img src="{{ asset('/images/pinterest.png') }}" alt="icone pinterest"></a>
+                        <a href=""><img src="{{ asset('/images/instagram.png') }}" alt="icone instagram"></a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="end">
+                        <a href="">Mentions légales</a>
+                        <a href="">Nos Partenaires</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        
+        {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+        
+        <!---Bootstrap-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+        <!--dataTables-->
+        <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+        {% endblock %}  
+    </body>
+</html>

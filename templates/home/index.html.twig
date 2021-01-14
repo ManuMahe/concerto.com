@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Concerto.com - un concerto de bonnes affaires{% endblock %}
+
+{% block body %}
+<h2>Nos Produits :</h2>
+<div class="produits">
+    {% for produit in produits %}
+
+    <div class="produit">
+
+        <h4>{{ produit.nomProduit }}</h4>
+        <img src="{{ asset('uploads/photos/' ~ produit.photoProduit) }}" alt="photo {{ produit.nomProduit }}">
+        <h5>A partir de {{ produit.prixProduit }} €</h5>
+        <h6>{{ produit.stockProduit }} produit(s) en stock</h6>
+        <p>{{ produit.descriptionProduit }}</p>
+
+    </div>
+
+
+    {% endfor %}
+</div>
+{% endblock %}
