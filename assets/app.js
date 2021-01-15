@@ -76,7 +76,38 @@ import './bootstrap';
 $(document).ready( function () {
     $('.table').DataTable();
 
+    // $('.navTest').hide();  // d'abord, on masque le menu
+    var hauteur = 250; // Nombre de pixels de scroll où il est sensé apparaitre
+    $(function(){
+      $(window).scroll(function () {//Au scroll dans la fenetre on déclenche la fonction
+        if ($(this).scrollTop() > hauteur) { //si on a défile de plus de XXX (variable "hauteur) pixels du haut vers le bas
+                $('.navTest').animate().removeClass("hidden");
+                // $('.navTest').show(); 
+                // $('.navTest').fadeIn(1000); 
+        } else {
+                $('.navTest').animate().addClass("hidden"); 
+            //    $('.navTest').hide(); 
+            //    $('.navTest').fadeOut(1000);
+        }
+      });
+    });
 
+    var hauteur2 = 1000;
+    $(function(){
+        $(window).scroll(function () {//Au scroll dans la fenetre on déclenche la fonction
+          if ($(this).scrollTop() > hauteur2) { //si on a défile de plus de XXX (variable "hauteur) pixels du haut vers le bas
+                  $('.pont').removeClass("hiddenPont");
+                  // $('.navTest').show(); 
+                  // $('.navTest').fadeIn(1000); 
+          } else {
+                  $('.pont').addClass("hiddenPont"); 
+              //    $('.navTest').hide(); 
+              //    $('.navTest').fadeOut(1000);
+          }
+        });
+      });
 
 } );
+
+
 

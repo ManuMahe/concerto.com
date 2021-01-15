@@ -28,6 +28,7 @@
     </head>
     <body>
         <!--header-->
+    <header id="header">
         <div class="row satisfait">
             <div class="col-sm-4 start"><i class="fas fa-smile"></i> Satisfait ou remboursé</div>
             <div class="col-sm-4"><i class="fas fa-truck"></i> Livraison sous 72h</div>
@@ -126,11 +127,12 @@
             </div>
 
         </div>
+    </header>
 
 
         <!-- Test navbar verticale -->
         {% set route_name = app.request.attributes.get('_route') %}
-        <nav class="navTest" id="navTest">
+        <nav class="navTest hidden" id="navTest">
             <a {% if route_name matches '{^home}' %} class="bouton active" {% else %} class="bouton" {% endif %} href="{{ path('home') }}"><i class="fas fa-home"></i></a>
             <a {% if route_name matches '{^contact}' %} class="bouton active" {% else %} class="bouton" {% endif %} href="{{ path('contact_index') }}"><i class="fas fa-envelope-open-text"></i></a>
             {% if app.user %}
@@ -145,6 +147,11 @@
                 <a {% if route_name == "app_register" %} class="bouton active" {% else %} class="bouton" {% endif %} href="{{ path('app_register') }}"><i class="fas fa-user-plus"></i></a>
             {% endif %}
         </nav>
+
+
+        <div class="pont hiddenPont">
+            <img src="{{ asset('/images/pontPNG.png') }}" alt="Pont St Nazaire">
+        </div>
 
         <div class="container">
             {% block body %}{% endblock %}

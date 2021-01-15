@@ -352,21 +352,22 @@ footer {
 .navTest {
     position: fixed;
     left: 0%;
+    top: 5%;
     display: flex;
     flex-direction: column;
     margin: 0 auto;
     justify-content: start;
     align-items: center;
     border-radius: 0px 10px 10px 0px;
-    border-left: 5px solid darkred;
-    background-color: red;
+    border-left: 5px solid lightblue;
+    background-color: black;
     a {
         color: black;
         display: flex;
         align-items: center;
         justify-content: center;
         font-size: 200%;
-        background-color: orangered;
+        background-color: lightblue;
         border-radius: 50%;
         margin: 30px 5px 30px 5px;
         text-align: center;
@@ -374,17 +375,32 @@ footer {
         height: 60px;
         width: 60px;
         transition: 0.2s ease;
-        box-shadow: 0px 0px 1px 1px  darkred;
+        box-shadow: 0px 0px 1px 1px  gray;
         &:hover {
-            background-color: orange;
-            box-shadow: 0px 0px 1px 1px inset darkred;
+            background-color: white;
+            box-shadow: 0px 0px 1px 1px inset lightblue;
+
         }
     }
 }
 
 .active {
-    background-color:orange !important;
-    box-shadow: 0px 0px 1px 1px inset darkred !important;
+    background-color:white !important;
+    box-shadow: 0px 0px 1px 1px inset lightblue !important;
+
+}
+
+.hidden {
+    left: -70px;
+}
+
+.pont {
+    position: fixed;
+    right: 0%;
+    bottom: -42px;
+}
+.hiddenPont {
+    bottom: -200px;
 }
 
 //---Version Mobile---//
