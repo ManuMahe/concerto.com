@@ -347,9 +347,50 @@ footer {
 
 //---DataTables---//
 
+
+//---NavTest---//
+.navTest {
+    position: fixed;
+    left: 0%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    justify-content: start;
+    align-items: center;
+    border-radius: 0px 10px 10px 0px;
+    border-left: 5px solid darkred;
+    background-color: red;
+    a {
+        color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 200%;
+        background-color: orangered;
+        border-radius: 50%;
+        margin: 30px 5px 30px 5px;
+        text-align: center;
+        vertical-align: middle;
+        height: 60px;
+        width: 60px;
+        transition: 0.2s ease;
+        box-shadow: 0px 0px 1px 1px  darkred;
+        &:hover {
+            background-color: orange;
+            box-shadow: 0px 0px 1px 1px inset darkred;
+        }
+    }
+}
+
+.active {
+    background-color:orange !important;
+    box-shadow: 0px 0px 1px 1px inset darkred !important;
+}
+
 //---Version Mobile---//
 .mobile {
     display: none;
+    font-size: 200%;
     img {
         height: 30px;
         width: 30px;

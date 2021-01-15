@@ -88,7 +88,7 @@
 
             </div>
             <div id="note2" class="touche aNoir">
-                <a href=""></a>
+                
                 <a href="{{ path('contact_index') }}"><i class="fas fa-envelope-open-text"></i></a>
 
             </div>
@@ -126,6 +126,25 @@
             </div>
 
         </div>
+
+
+        <!-- Test navbar verticale -->
+        {% set route_name = app.request.attributes.get('_route') %}
+        <nav class="navTest" id="navTest">
+            <a {% if route_name matches '{^home}' %} class="bouton active" {% else %} class="bouton" {% endif %} href="{{ path('home') }}"><i class="fas fa-home"></i></a>
+            <a {% if route_name matches '{^contact}' %} class="bouton active" {% else %} class="bouton" {% endif %} href="{{ path('contact_index') }}"><i class="fas fa-envelope-open-text"></i></a>
+            {% if app.user %}
+                <a {% if route_name == "app_logout" %} class="bouton active" {% else %} class="bouton" {% endif %} href="{{ path('app_logout') }}"><i class="fas fa-sign-out-alt"></i></a>
+            {% else %}
+                <a {% if route_name == "app_login" %} class="bouton active" {% else %} class="bouton" {% endif %} href="{{ path('app_login') }}"><i class="fas fa-sign-in-alt"></i></a>
+            {% endif %}
+
+            {% if app.user %}
+                <a {% if route_name matches '{^produit}' %} class="bouton active" {% else %} class="bouton" {% endif %} href="{{ path('produit_index') }}"><i class="fas fa-cogs"></i></a>
+            {% else %}
+                <a {% if route_name == "app_register" %} class="bouton active" {% else %} class="bouton" {% endif %} href="{{ path('app_register') }}"><i class="fas fa-user-plus"></i></a>
+            {% endif %}
+        </nav>
 
         <div class="container">
             {% block body %}{% endblock %}
@@ -189,6 +208,8 @@
                 </div>
             </div>
         </footer>
+
+
         
         {% block javascripts %}
         {{ encore_entry_script_tags('app') }}
